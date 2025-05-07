@@ -21342,7 +21342,20 @@
           <leadingDigits>
             1(?:
               [02469]|
-              [378][1-9]
+              [378][1-9]|
+              53
+            )|
+            8
+          </leadingDigits>
+          <leadingDigits>
+            1(?:
+              [02469]|
+              [37][1-9]|
+              53|
+              8(?:
+                [1-46-9]|
+                5[7-9]
+              )
             )|
             8
           </leadingDigits>
@@ -21355,7 +21368,12 @@
         </numberFormat>
         <!-- Variable cost (premium rate, toll free etc.) -->
         <numberFormat pattern="(\d)(\d{3})(\d{2})(\d{4})">
-          <leadingDigits>1[36-8]</leadingDigits>
+          <leadingDigits>
+            1(?:
+              [367]|
+              80
+            )
+          </leadingDigits>
           <format>$1-$2-$3-$4</format>
         </numberFormat>
         <!-- 10 digit mobile or voip ranges -->
@@ -21386,6 +21404,7 @@
         <possibleLengths national="8,9" localOnly="6,7"/>
         <exampleNumber>323856789</exampleNumber>
         <nationalNumberPattern>
+          4270\d{4}|
           (?:
             3(?:
               2[0-36-9]|
@@ -21450,7 +21469,7 @@
         <exampleNumber>123456789</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            1888[69]|
+            1888[689]|
             4400|
             8(?:
               47|
@@ -21471,24 +21490,27 @@
                 [1-9]\d
               )|
               7(?:
-                [0134]\d|
-                2[1-9]|
-                5[0-6]
+                [0-4]\d|
+                5[0-7]
               )
             )|
             (?:
-              (?:
-                [269]|
-                59
-              )\d|
+              [269]\d|
               [37][1-9]|
               4[235-9]
             )\d|
+            5(?:
+              31|
+              9\d\d
+            )|
             8(?:
               1[23]|
               [236]\d|
               4[06]|
-              5[7-9]|
+              5(?:
+                46|
+                [7-9]
+              )|
               7[016-9]|
               8[01]|
               9[0-8]
