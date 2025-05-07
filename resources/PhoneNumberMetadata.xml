@@ -17934,9 +17934,9 @@
           </leadingDigits>
           <format>$1 $2 $3</format>
         </numberFormat>
-        <!-- Format for UAN numbers. -->
+        <!-- Format for 9 digit Mobile numbers. -->
         <numberFormat pattern="(\d{2})(\d{2})(\d{2})(\d{3})" nationalPrefixFormattingRule="$NP$FG">
-          <leadingDigits>30[0135-9]</leadingDigits>
+          <leadingDigits>3</leadingDigits>
           <format>$1 $2 $3 $4</format>
         </numberFormat>
         <!-- Format for mobile numbers. -->
@@ -17969,24 +17969,19 @@
       </fixedLine>
       <!-- Adding 202[89], 205[289], 207[68] and 209[135-7] from numbers found online. -->
       <mobile>
-        <possibleLengths national="10"/>
+        <possibleLengths national="9,10"/>
         <exampleNumber>2023123456</exampleNumber>
         <nationalNumberPattern>
-          208[78]\d{6}|
           (?:
-            20[23579]|
-            30[24]
-          )\d{7}
+            20(?:
+              [23579]\d|
+              8[78]
+            )|
+            30[24]\d
+          )\d{6}|
+          30\d{7}
         </nationalNumberPattern>
       </mobile>
-      <!-- The Lonely Planet says that newer WIN phones (fixed phones without a physical landline)
-           start with 030. There are plenty of examples online as customer care numbers. As these
-           are available accross nation, supporting them as UAN. -->
-      <uan>
-        <possibleLengths national="9"/>
-        <exampleNumber>301234567</exampleNumber>
-        <nationalNumberPattern>30[0135-9]\d{6}</nationalNumberPattern>
-      </uan>
     </territory>
 
     <!-- Lebanon (LB) -->
