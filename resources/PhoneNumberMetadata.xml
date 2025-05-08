@@ -17949,6 +17949,7 @@
         <nationalNumberPattern>
           [23]\d{9}|
           3\d{8}|
+          \d{8}|
           (?:
             [235-8]\d|
             41
@@ -17969,11 +17970,13 @@
       </fixedLine>
       <!-- Adding 202[89], 205[289], 207[68] and 209[135-7] from numbers found online. -->
       <mobile>
-        <possibleLengths national="9,10"/>
+        <possibleLengths national="8,9,10"/>
         <exampleNumber>2023123456</exampleNumber>
         <nationalNumberPattern>
           (?:
-            20(?:
+            (?:
+              20
+            )?(?:
               [23579]\d|
               8[78]
             )|
