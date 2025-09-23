@@ -12729,7 +12729,7 @@
           <format>$1 $2</format>
         </numberFormat>
         <!-- http://en.wikipedia.org/wiki/Toll-free_telephone_number, and examples on the web show
-             that sometimes they are followed by fewer digits. -->
+             that sometimes they are followed by fewer digits -->
         <numberFormat pattern="(\d{3})(\d{5,7})" nationalPrefixFormattingRule="$NP$FG">
           <leadingDigits>800</leadingDigits>
           <format>$1 $2</format>
@@ -12764,8 +12764,8 @@
           <leadingDigits>8</leadingDigits>
           <format>$1-$2-$3</format>
         </numberFormat>
-        <!-- 12 digit toll free numbers. -->
-        <numberFormat pattern="(\d{3})(\d{3})(\d{3})(\d{3})">
+        <!-- Format for 001803 toll free numbers. -->
+        <numberFormat pattern="(\d{3})(\d{3})(\d{3})(\d{2,8})">
           <leadingDigits>001</leadingDigits>
           <format>$1 $2 $3 $4</format>
           <intlFormat>NA</intlFormat>
@@ -12779,14 +12779,12 @@
       </availableFormats>
       <generalDesc>
         <nationalNumberPattern>
+          00[1-9]\d{9,14}|
           (?:
-            (?:
-              00[1-9]|
-              8\d
-            )\d{4}|
-            [1-36]
+            [1-36]|
+            8\d{5}
           )\d{6}|
-          00\d{10}|
+          00\d{9}|
           [1-9]\d{8,10}|
           [2-9]\d{7}
         </nationalNumberPattern>
@@ -12794,9 +12792,9 @@
       <!-- 00798 ITFS numbers can't be dialled internationally. Source:
            https://support.twilio.com/hc/en-us/articles/115007579027-Toll-free-phone-number-restrictions-and-limitations -->
       <noInternationalDialling>
-        <possibleLengths national="10,12,13"/>
+        <possibleLengths national="[10-17]"/>
         <nationalNumberPattern>
-          001803\d{6,7}|
+          001803\d{5,11}|
           (?:
             007803\d|
             8071
@@ -12894,15 +12892,17 @@
         <nationalNumberPattern>8[1-35-9]\d{7,10}</nationalNumberPattern>
       </mobile>
       <tollFree>
-        <possibleLengths national="[8-13]"/>
+        <possibleLengths national="[8-17]"/>
         <exampleNumber>8001234567</exampleNumber>
         <nationalNumberPattern>
-          00[17]803\d{7}|
+          00(?:
+            1803\d{5,11}|
+            7803\d{7}
+          )|
           (?:
             177\d|
             800
-          )\d{5,7}|
-          001803\d{6}
+          )\d{5,7}
         </nationalNumberPattern>
       </tollFree>
       <!-- The information below is provided by an Indonesian -->
