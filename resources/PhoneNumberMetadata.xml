@@ -27217,12 +27217,20 @@
         <possibleLengths national="9"/>
         <exampleNumber>812345678</exampleNumber>
         <nationalNumberPattern>
-          671[0-8]\d{5}|
           (?:
-            14|
-            6[1-69]|
-            [89]\d
-          )\d{7}
+            (?:
+              14|
+              [89]\d
+            )\d\d|
+            6(?:
+              [1-69]\d\d|
+              7(?:
+                1[0-8]|
+                2[14-7]|
+                3[1-6]
+              )
+            )
+          )\d{5}
         </nationalNumberPattern>
       </mobile>
       <!-- http://en.wikipedia.org/wiki/Toll-free_telephone_number. Prefix 001800 of length
