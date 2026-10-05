@@ -25721,7 +25721,7 @@
           <leadingDigits>
             [369]|
             8(?:
-              0[1-5]|
+              0[1-9]|
               [1-9]
             )
           </leadingDigits>
@@ -25764,23 +25764,16 @@
           )\d{5}
         </nationalNumberPattern>
       </fixedLine>
-      <!-- 802[23] and 804[1467] are added based on user report.  -->
+      <!-- 802[23] ,804[1467] and 8055 are added based on user report.  -->
       <mobile>
         <possibleLengths national="8"/>
         <exampleNumber>81234567</exampleNumber>
         <nationalNumberPattern>
-          8(?:
-            051|
-            95[0-2]
-          )\d{4}|
+          80[1-9]\d{5}|
           (?:
-            8(?:
-              0[1-4]|
-              [1-8]\d|
-              9[0-4]
-            )|
-            9[0-8]\d
-          )\d{5}
+            8[1-9]|
+            9[0-8]
+          )\d{6}
         </nationalNumberPattern>
       </mobile>
       <tollFree>
